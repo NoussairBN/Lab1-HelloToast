@@ -8,31 +8,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Déclaration d'une variable pour stocker la valeur du compteur
-    private int count = 0;
+    // Compteur d'attaques repoussées
+    private int blockedAttempts = 0;
 
-    // Référence vers le composant TextView
-    private TextView textCount;
+    // Référence vers l'écran d'affichage
+    private TextView tvBlockedCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // lie le XML au code
+        setContentView(R.layout.activity_main); // Lie au nouveau design sombre
 
-        // Liaison des composants XML avec le code Java
-        textCount = findViewById(R.id.text_count);
-        Button buttonToast = findViewById(R.id.button_toast);
-        Button buttonCount = findViewById(R.id.button_count);
+        // Radar : on récupère nos nouveaux éléments XML
+        tvBlockedCount = findViewById(R.id.tv_blocked_count);
+        Button btnScan = findViewById(R.id.btn_network_scan);
+        Button btnAttack = findViewById(R.id.btn_simulate_attack);
 
-        // Lorsque l'utilisateur clique sur "Afficher un message"
-        buttonToast.setOnClickListener(v -> {
-            Toast.makeText(this, "Bonjour !", Toast.LENGTH_SHORT).show();
+        // Action 1 : Lancer un scan (Le fameux Toast)
+        btnScan.setOnClickListener(v -> {
+            Toast.makeText(this, "CyberSentinel Actif : Réseau sécurisé.", Toast.LENGTH_SHORT).show();
         });
 
-        // Lorsque l'utilisateur clique sur "Incrémenter le compteur"
-        buttonCount.setOnClickListener(v -> {
-            count++; // ajoute 1
-            textCount.setText(String.valueOf(count)); // affiche la nouvelle valeur
+        // Action 2 : Simuler l'attaque (Le Compteur)
+        btnAttack.setOnClickListener(v -> {
+            blockedAttempts++; // Ajoute +1 aux attaques
+            tvBlockedCount.setText(String.valueOf(blockedAttempts));
         });
     }
 }
