@@ -1,7 +1,7 @@
-## Lab 1 : HelloToast - Édition CyberSentinel
+## Lab 1 : HelloToast
 
 Ce projet est la réalisation du **Lab 1 - Programmation Mobile (Android)**. 
-Afin d'aller plus loin que le simple exercice de base, l'interface et la logique ont été personnalisées autour d'un thème de cybersécurité (DevSecOps).
+Afin d'aller plus loin que le simple exercice de base, l'interface et la logique ont été personnalisées autour d'un thème de cybersécurité .
 
 ##  Objectifs du Lab réalisés
 - Création d'une interface utilisateur en **XML** (utilisation de `LinearLayout`).
